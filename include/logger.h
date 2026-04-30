@@ -44,6 +44,8 @@ public:
         return *this;
     }
 
+    static void pureLog(int level, const char* channel, std::string_view message);
+
 private:
     int m_level;
     const char* m_channel;
@@ -54,4 +56,22 @@ private:
 
     static int s_logLevel;
     static SemaphoreHandle_t s_mutex;
+};
+
+#define FUNCTION_TRACER(LEVEL, CHANNEL) \
+    Tracer tracer(LEVEL, CHANNEL, FILE_NAME, __func__)
+// 两个常用的
+#define FUNCTION_TRACER_DEBUG(CHANNEL) FUNCTION_TRACER(LOG_LEVEL_DEBUG, CHANNEL)
+#define FUNCTION_TRACER_INFO(CHANNEL) FUNCTION_TRACER(LOG_LEVEL_INFO, CHANNEL)
+
+class Tracer final {
+public:
+    Tracer(int level, const char* channel, const char* file, const char* funcName);
+    ~Tracer();
+
+private:
+    int m_level;
+    const char* m_channel;
+    const char* m_file;
+    const char* m_funcName;
 };
