@@ -1,0 +1,2 @@
+# Required: enable C++20 for std::format used by logger
+CONFIG_COMPILER_CXX_STANDARD=20

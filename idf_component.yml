@@ -1,0 +1,25 @@
+## IDF Component Manager Manifest File
+version: "0.1.0"
+description: "一个方便使用的 C++ 日志库，可以使用流操作符，或 C++ 风格的格式化。"
+url: "https://github.com/neapu/logger-esp32"
+repository: "https://github.com/neapu/logger-esp32.git"
+issues: "https://github.com/neapu/logger-esp32/issues"
+license: "MIT"
+tags:
+  - logger
+  - log
+  - cpp
+  - c++20
+  - freertos
+
+dependencies:
+  idf:
+    version: ">=6.0"
+
+files:
+  exclude:
+    - "examples/*/build/**"
+    - "examples/*/managed_components/**"
+    - "examples/*/sdkconfig"
+    - "examples/*/sdkconfig.old"
+    - "examples/*/dependencies.lock"

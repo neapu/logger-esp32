@@ -1,0 +1,6 @@
+## Local path dependency — resolves to the repository root (the logger component)
+dependencies:
+  idf:
+    version: ">=6.0"
+  logger:
+    path: "../../../"
