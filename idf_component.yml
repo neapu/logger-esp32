@@ -9,7 +9,7 @@ tags:
   - logger
   - log
   - cpp
-  - c++20
+  - cpp20
   - freertos
 
 dependencies:

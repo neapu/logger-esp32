@@ -88,13 +88,7 @@ Logger::setLogLevel(LOG_LEVEL_DEBUG); // 恢复全量输出
 
 ## 启用 C++20
 
-ESP-IDF 需要手动开启 C++20 支持，在 `sdkconfig.defaults` 中添加：
-
-```
-CONFIG_COMPILER_CXX_STANDARD=20
-```
-
-或通过 `idf.py menuconfig` → `Compiler Options` → `C++ Language Standard` 设置为 `C++20`。
+ESP-IDF 6.0+ 工具链（GCC 15.x）默认使用 `gnu++26` 标准，`std::format` 等 C++20/23/26 特性开箱即用，无需额外配置。
 
 ## 许可证
 
@@ -189,13 +183,7 @@ Logger::setLogLevel(LOG_LEVEL_DEBUG); // restore all
 
 ## Enabling C++20
 
-Add to `sdkconfig.defaults`:
-
-```
-CONFIG_COMPILER_CXX_STANDARD=20
-```
-
-Or via `idf.py menuconfig` → `Compiler Options` → `C++ Language Standard` → `C++20`.
+ESP-IDF 6.0+ with GCC 15.x defaults to `gnu++26`, so `std::format` and other C++20/23/26 features are available out of the box with no extra configuration required.
 
 ## License
 

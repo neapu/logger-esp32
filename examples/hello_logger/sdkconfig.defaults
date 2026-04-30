@@ -1,2 +1,2 @@
-# Required: enable C++20 for std::format used by logger
-CONFIG_COMPILER_CXX_STANDARD=20
+# ESP-IDF 6.0+ defaults to gnu++26 (GCC 15.x), so std::format is available
+# without any extra configuration.
